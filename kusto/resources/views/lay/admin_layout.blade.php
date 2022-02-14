@@ -194,6 +194,39 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    О Нашем фонде
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('about_found.index') }}" class="nav-link">
+                                        <p>Наш Фонд</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('about_found.create')}}" class="nav-link">
+                                        <p>Добавить Фонд</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('about_found_content.index') }}" class="nav-link">
+                                        <p>Контент</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('about_found_content.create')}}" class="nav-link">
+                                        <p>Добавить Контент</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

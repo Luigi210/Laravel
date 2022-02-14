@@ -7,6 +7,9 @@ use App\Models\News;
 use App\Models\Projects;
 use App\Models\Found;
 use App\Models\Icon;
+use App\Models\AboutFound;
+use App\Models\AboutFoundContent;
+
 
 
 class CompactController extends Controller
@@ -18,7 +21,9 @@ class CompactController extends Controller
         $projects = Projects::all();
         $founds = Found::all();
         $icons = Icon::all();
-        return view('main', compact('news', 'projects', 'founds', 'icons'));
+        $about_found = AboutFound::first();
+        $found_content = AboutFoundContent::all();
+        return view('main', compact('news', 'projects', 'founds', 'icons', 'about_found', 'found_content'));
     }
 
     // public function projects(){

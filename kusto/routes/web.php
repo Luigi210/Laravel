@@ -35,8 +35,8 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     // Route::put('newspage/{newspage}/edit', 'NewsPageController@update');
     Route::resource('found', \Admin\FoundController::class);
     Route::resource('icon', \Admin\IconController::class);
-
-
+    Route::resource('about_found', \Admin\AboutFoundController::class);
+    Route::resource('about_found_content', \Admin\AboutFoundContentController::class);
 });
 
 Route::post('/', [App\Http\Controllers\CustomUserController::class, 'submit']);

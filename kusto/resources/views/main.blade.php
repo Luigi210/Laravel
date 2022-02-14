@@ -68,16 +68,7 @@
                             </a>
                         @endif
                     @endforeach
-                    {{-- <a class="intro__content-link intro__content-instagram" href="#?">
-                        <svg class="icon" width="19" height="19">
-                            <use xlink:href="images/icons/sprite.svg#instagram"></use>
-                        </svg>
-                    </a>
-                    <a class="intro__content-link intro__content-facebook" href="#?">
-                        <svg class="icon" width="11" height="21">
-                            <use xlink:href="images/icons/sprite.svg#facebook"></use>
-                        </svg>
-                    </a> --}}
+                    
                 </div>
             </div>
         </div>
@@ -85,6 +76,33 @@
 @endsection
 
 
+@section('about_found')
+
+    <img class="about__img" src="{{$about_found['image']}}" alt="">
+    <div class="about__content">
+        <h3 class="about__title page__title">
+            {{$about_found['title']}}
+        </h3>
+        <p class="about__text page__text">
+            {{$about_found['description']}}
+        </p>
+
+        @foreach ($found_content as $content)
+            <div class="about__item">
+                <img class="about__item-img" src="{{$content['image']}}" alt="">
+                <div class="about__item-content">
+                    <h5 class="about__item-title">
+                        {{$content['title']}}
+                    </h5>
+                    <p class="about__item-text page__text">
+                        {{$content['description']}}
+                    </p>
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+@endsection
 
 
 

@@ -53,7 +53,7 @@ class IconController extends Controller
         $icons->found_id = $request->found_id;
         
         $icons->save();
-        return redirect()->back()->withSucces('Новости добавлены');
+        return redirect()->back()->withSucces('Иконка добавлена');
     }
 
     /**
