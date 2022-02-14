@@ -79,30 +79,30 @@
             </div>
         </header>
 
-        <main class="main" style="background-image: url({{url('images/bg/page-bg.jpg')}})">
 
-            <section class="news__page">
-                <div class="container">
-                    <h3 class="news__page-title page__title">
-                        Новостная страница
-                    </h3>
-                    <img class="news__page-img" src="images/img/news-image.jpg" alt="">
-                    <p class="news__page-date">
-                        21 сентября 2021
-                    </p>
-                    <p class="news__page-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae.
-                    </p>
-                    <p class="news__page-text">
-                        Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.
-                    </p>
-                </div>
-            </section>
+        <main class="main" style="background-image: url({{url('images/bg/page-bg.jpg')}})">
+                <section class="news__page">
+                    <div class="container">
+                        <h3 class="news__page-title page__title">
+                            {{$newspage['title']}}
+                        </h3>
+                        <img class="news__page-img" src="{{$newspage['image']}}" alt="">
+                        <p class="news__page-date">
+                            {{$newspage['date']}}
+                        </p>
+                        {{-- <p class="news__page-text"> --}}
+                            {{$newspage['description']}}
+                        {{-- </p> --}}
+                        {{-- <p class="news__page-text">
+                            Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.
+                        </p> --}}
+                    </div>
+                </section>
 
             <section class="foundation">
                 <div class="container">
                     <div class="foundation__inner">
-                        <img class="foundation__img" src="{{url('/images/img/foundation-img.png')}}" alt="">
+                        <img class="foundation__img" src="images/img/foundation-img.png" alt="">
                         <div class="foundation__content">
                             <h3 class="foundation__title">
                                 Обратиться в фонд
@@ -110,7 +110,8 @@
                             <p class="foundation__text">
                                 Задайте их нашему специалисту и получите ответ в течение 15 минут!
                             </p>
-                            <form class="foundation__form">
+                            <form class="foundation__form" method="POST">
+                                @csrf
                                 <input class="foundation__form-name input-words" type="text" name="name" placeholder="Вашe имя">
                                 <input class="foundation__form-phone input-phone" type="phone" name="phone" placeholder="Ваш телефон">
                                 <input class="foundation__form-btn page__btn" type="submit" value="Задать вопрос">

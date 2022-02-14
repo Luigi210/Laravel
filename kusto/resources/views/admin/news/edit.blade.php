@@ -64,7 +64,4 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-    <script>
-        console.log(21, $news['image']);
-    </script>
 @endsection

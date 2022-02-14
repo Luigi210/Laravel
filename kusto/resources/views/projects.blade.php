@@ -6,7 +6,7 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=0>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/fovicon.svg">
+    <link rel="icon" href="{{asset('/images/fovicon.svg')}}">
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
@@ -42,17 +42,17 @@
                         <nav class="header__nav">
                             <ul class="header__list">
                                 <li class="header__list-item">
-                                    <a class="header__list-link" href="about.html">
+                                    <a class="header__list-link" href="{{url('/about')}}">
                                         О фонде
                                     </a>
                                 </li>
                                 <li class="header__list-item">
-                                    <a class="header__list-link" href="projects.html">
+                                    <a class="header__list-link" href="{{url('projects.html')}}">
                                         Наши проекты
                                     </a>
                                 </li>
                                 <li class="header__list-item">
-                                    <a class="header__list-link" href="reports.html">
+                                    <a class="header__list-link" href="{{url('reports.html')}}">
                                         Отчёты
                                     </a>
                                 </li>
@@ -79,25 +79,28 @@
             </div>
         </header>
 
-        <main class="main" style="background-image: url(images/bg/page-bg.jpg)">
 
-            <section class="news__page">
-                <div class="container">
-                    <h3 class="news__page-title page__title">
-                        Новостная страница
-                    </h3>
-                    <img class="news__page-img" src="images/img/news-image.jpg" alt="">
-                    <p class="news__page-date">
-                        21 сентября 2021
-                    </p>
-                    <p class="news__page-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae.
-                    </p>
-                    <p class="news__page-text">
-                        Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.
-                    </p>
-                </div>
-            </section>
+        <main class="main" style="background-image: url({{url('images/bg/page-bg.jpg')}})">
+                
+                @foreach($project as $proj)
+                    <section class="news__page">
+                        <div class="container">
+                            <h3 class="news__page-title page__title">
+                                {{$proj['title']}}
+                            </h3>
+                            {{-- <img class="news__page-img" src="{{$projectspage['image']}}" alt=""> --}}
+                            <p class="news__page-date">
+                                {{$proj['date']}}
+                            </p>
+                            <p class="news__page-text">
+                                {{$proj['description']}}
+                            </p> 
+                            {{-- {{-- <p class="news__page-text">
+                                Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt leo tincidunt ipsum amet gravida ac, semper egestas. Sagittis sodales in sed amet, sapien vestibulum viverra vestibulum et. A non nibh pellentesque quam commodo, sed vel placerat. Lacus enim tellus eu elit quisque facilisis ut. Ullamcorper cursus nascetur non eu leo vitae. Suspendisse porttitor elit morbi tincidunt pellentesque erat. Amet venenatis vel iaculis purus scelerisque tempus dignissim. Purus eu praesent magna etiam. Volutpat aliquam ut nibh pharetra non malesuada. Eu feugiat adipiscing placerat in fames arcu maecenas ullamcorper. Et aliquam scelerisque tincidunt nibh id. Iaculis senectus sit mauris eleifend. Aliquam ut consectetur volutpat ultricies etiam mauris cras sed congue. Massa nunc urna pharetra, egestas lobortis.
+                            </p> --}}
+                        </div>
+                    </section>
+                @endforeach
 
             <section class="foundation">
                 <div class="container">
@@ -110,7 +113,8 @@
                             <p class="foundation__text">
                                 Задайте их нашему специалисту и получите ответ в течение 15 минут!
                             </p>
-                            <form class="foundation__form">
+                            <form class="foundation__form" method="POST">
+                                @csrf
                                 <input class="foundation__form-name input-words" type="text" name="name" placeholder="Вашe имя">
                                 <input class="foundation__form-phone input-phone" type="phone" name="phone" placeholder="Ваш телефон">
                                 <input class="foundation__form-btn page__btn" type="submit" value="Задать вопрос">
@@ -127,7 +131,7 @@
                 <div class="footer__inner">
                     <div class="footer__social">
                         <a class="footer__logo" href="#?">
-                            <img class="footer__logo-img" src="images/footer-logo.png" alt="">
+                            <img class="footer__logo-img" src="{{asset('/images/footer-logo.png')}}" alt="">
                         </a>
                         <div class="footer__social-icons">
                             <a class="footer__social-link footer__social-youtube" href="#?">

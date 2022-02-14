@@ -132,7 +132,68 @@
                                 </li> --}}
                             </ul>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Страницы
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('newspage.index') }}" class="nav-link">
+                                        <p>Страница Новости</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('newspage.create')}}" class="nav-link">
+                                        <p>Добавить Новости</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('projectspage.index') }}" class="nav-link">
+                                        <p>Страница Проекты</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('projectspage.create')}}" class="nav-link">
+                                        <p>Добавить Проект</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    О фонде
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('found.index') }}" class="nav-link">
+                                        <p>Страница Фонда</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('found.create')}}" class="nav-link">
+                                        <p>Добавить Фонд</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('icon.index') }}" class="nav-link">
+                                        <p>Страница Иконки</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('icon.create')}}" class="nav-link">
+                                        <p>Добавить Иконки</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

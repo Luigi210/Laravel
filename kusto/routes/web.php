@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\CompactController::class, 'index']);
 
+Route::get('/news', [App\Http\Controllers\PageController::class, 'index']);
+Route::get('/projects', [App\Http\Controllers\ProjectsPageController::class, 'index']);
 
 
-Route::get('/news', function(){
-    return view('news');
-});
+
 
 Route::get('/projects', function(){
     return view('projects');
@@ -26,18 +26,23 @@ Route::get('/projects', function(){
 
 Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     
-    Route::get('/admin', function(){
-        return view('admin');
-    });
-
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.index');
     Route::resource('news', \Admin\NewsController::class);
     Route::resource('projects', \Admin\ProjectsController::class);
     Route::resource('custom_users', \Admin\CustomUserController::class);
+    Route::resource('projectspage', \Admin\ProjectsPageController::class);
+    Route::resource('newspage', \Admin\NewsPageController::class);
+    // Route::put('newspage/{newspage}/edit', 'NewsPageController@update');
+    Route::resource('found', \Admin\FoundController::class);
+    Route::resource('icon', \Admin\IconController::class);
+
 
 });
 
 Route::post('/', [App\Http\Controllers\CustomUserController::class, 'submit']);
+Route::post('/projects', [App\Http\Controllers\CustomUserController::class, 'submit']);
+Route::post('/news', [App\Http\Controllers\CustomUserController::class, 'submit']);
+
 
 Auth::routes();
 

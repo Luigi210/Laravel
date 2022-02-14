@@ -15,6 +15,9 @@ class CreateFoundsTable extends Migration
     {
         Schema::create('founds', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            // $table->foreign('icon_id')->references('id')
             $table->timestamps();
         });
     }

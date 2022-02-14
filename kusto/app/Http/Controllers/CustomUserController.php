@@ -19,4 +19,9 @@ class CustomUserController extends Controller
             'phone' => $phone
         ]);
     }
+
+    public function index(){
+
+        return view('request');
+    }
 }
