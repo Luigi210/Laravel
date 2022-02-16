@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Http\Controllers\Controller;
-use App\Models\Icon;
-use App\Models\Found;
+use App\Models\SocialLinkIcon;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class IconController extends Controller
+class SocialIconController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +17,13 @@ class IconController extends Controller
     public function index()
     {
         //
-        $icons = Icon::orderBy('created_at', 'desc')->get();
+        $icons = SocialLinkIcon::orderBy('created_at', 'desc')->get();
 
-        return view('admin.icon.index', [
-            'icons' => $icons
-        ]);
+        return view('admin.about_icon.index',
+            [
+                'icons' => $icons
+            ]
+        );
     }
 
     /**
@@ -33,10 +34,12 @@ class IconController extends Controller
     public function create()
     {
         //
-        $founds = Found::orderBy('created_at', 'desc')->get();
-        return view('admin.icon.create', [
-            'founds' => $founds
-        ]);
+        $employees = Employee::orderBy('created_at', 'desc')->get();
+        return view('admin.about_icon.create',
+            [
+                'employees' => $employees
+            ]
+        );
     }
 
     /**
@@ -48,21 +51,22 @@ class IconController extends Controller
     public function store(Request $request)
     {
         //
-        $icons = new Icon();
+        $icons = new SocialLinkIcon();
         $icons->icon = $request->icon;
-        $icons->found_id = $request->found_id;
-        
+        $icons->employee_id = $request->employee_id;
+
         $icons->save();
+
         return redirect()->back()->withSuccess('Иконка добавлена');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Icon  $icon
+     * @param  \App\Models\SocialLinkIcon  $socialLinkIcon
      * @return \Illuminate\Http\Response
      */
-    public function show(Icon $icon)
+    public function show(SocialLinkIcon $socialLinkIcon)
     {
         //
     }
@@ -70,18 +74,18 @@ class IconController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Icon  $icon
+     * @param  \App\Models\SocialLinkIcon  $socialLinkIcon
      * @return \Illuminate\Http\Response
      */
-    public function edit(Icon $icon)
+    public function edit(SocialLinkIcon $socialLinkIcon)
     {
         //
-        $founds = Found::orderBy('created_at', 'desc')->get();
+        $employees = Employee::orderBy('created_at', 'desc')->get();
 
-        return view('admin.icon.edit',
+        return view('admin.about_icon.edit',
             [
-                'icons' => $icon,
-                'founds' => $founds
+                'icons' => $socialLinkIcon,
+                'employees' => $employees
             ]
         );
     }
@@ -90,30 +94,31 @@ class IconController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Icon  $icon
+     * @param  \App\Models\SocialLinkIcon  $socialLinkIcon
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Icon $icon)
+    public function update(Request $request, SocialLinkIcon $socialLinkIcon)
     {
         //
-        $icon->icon = $request->icon;
-        $icon->found_id = $request->found_id;
+        $socialLinkIcon->icon = $request->icon;
+        $socialLinkIcon->employee_id = $request->employee_id;
 
-        $icon->save();
+        $socialLinkIcon->save();
+
         return redirect()->back()->withSuccess('Иконка изменена');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Icon  $icon
+     * @param  \App\Models\SocialLinkIcon  $socialLinkIcon
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Icon $icon)
+    public function destroy(SocialLinkIcon $socialLinkIcon)
     {
         //
-        $icon->delete();
-        return redirect()->back()->withSuccess('Иконка была удалена!');
-        
+        $socialLinkIcon->delete();
+
+        return redirect()->back()->withSuccess('Иконка удалена!');
     }
 }

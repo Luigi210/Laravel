@@ -51,7 +51,7 @@ class NewsController extends Controller
         $new_news->date = $request->date;
         
         $new_news->save();
-        return redirect()->back()->withSucces('Новости добавлены');
+        return redirect()->back()->withSuccess('Новости добавлены');
     }
 
     /**
@@ -95,7 +95,7 @@ class NewsController extends Controller
         $news->image = $request->image;
         $news->date = $request->date;
         $news->save();
-        return redirect()->back()->withSucces('Новости изменены');
+        return redirect()->back()->withSuccess('Новости изменены');
 
     }
 
@@ -109,7 +109,7 @@ class NewsController extends Controller
     {
         //
         $news->delete();
-        return redirect()->back()->withSucces('Новости были удалены!');
+        return redirect()->back()->withSuccess('Новости были удалены!');
 
     }
 }

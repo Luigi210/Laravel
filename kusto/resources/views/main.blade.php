@@ -100,7 +100,24 @@
                 </div>
             </div>
         @endforeach
+    </div>
+@endsection
 
+@section('report')
+    <h3 class="reports__title page__title" id="reports">
+        Годовые отчеты
+    </h3>
+    <div class="reports__inner">
+        @foreach($reports as $report)
+            <div class="reports__item">
+                <div class="reports__item-title">
+                    {{$report['title']}}
+                </div>
+                <a class="reports__item-download" href="images/bg/intro-bg.jpg" download="">
+                    Скачать
+                </a>
+            </div>
+        @endforeach
     </div>
 @endsection
 

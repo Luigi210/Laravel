@@ -224,8 +224,143 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Отчеты
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('report.index') }}" class="nav-link">
+                                        <p>Все отчеты</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('report.create')}}" class="nav-link">
+                                        <p>Добавить отчет</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                            
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Футер
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('report.index') }}" class="nav-link">
+                                        <p>Написать нам</p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('report.index') }}" class="nav-link">
+                                        <p>О нас</p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('report.create')}}" class="nav-link">
+                                        <p>Партнерам</p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('report.create')}}" class="nav-link">
+                                        <p>Контакты</p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Команда
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('member.index') }}" class="nav-link">
+                                        <p>Все команды</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('member.create')}}" class="nav-link">
+                                        <p>Добавить Команду</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('employee.index') }}" class="nav-link">
+                                        <p>Все Члены команды</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('employee.create')}}" class="nav-link">
+                                        <p>Добавить работника</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('abouticon.index') }}" class="nav-link">
+                                        <p>Все Иконки Члена Команды</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('abouticon.create')}}" class="nav-link">
+                                        <p>Добавить Иконку</p>
+                                    </a>
+                                </li>
+                                
+                            </ul>
                         </li>
                     </ul>
                 </nav>

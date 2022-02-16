@@ -16,13 +16,14 @@ Route::get('/', [App\Http\Controllers\CompactController::class, 'index']);
 
 Route::get('/news', [App\Http\Controllers\PageController::class, 'index']);
 Route::get('/projects', [App\Http\Controllers\ProjectsPageController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 
 
 
 
-Route::get('/projects', function(){
-    return view('projects');
-});
+// Route::get('/projects', function(){
+//     return view('projects');
+// });
 
 Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     
@@ -37,11 +38,19 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     Route::resource('icon', \Admin\IconController::class);
     Route::resource('about_found', \Admin\AboutFoundController::class);
     Route::resource('about_found_content', \Admin\AboutFoundContentController::class);
+    Route::resource('report', \Admin\ReportsController::class);
+    Route::resource('member', \Admin\MemberController::class);
+    Route::resource('employee', \Admin\EmployeeController::class);
+    Route::resource('abouticon', \Admin\SocialIconController::class);
+
+
 });
 
 Route::post('/', [App\Http\Controllers\CustomUserController::class, 'submit']);
 Route::post('/projects', [App\Http\Controllers\CustomUserController::class, 'submit']);
 Route::post('/news', [App\Http\Controllers\CustomUserController::class, 'submit']);
+Route::post('/about', [App\Http\Controllers\CustomUserController::class, 'submit']);
+
 
 
 Auth::routes();

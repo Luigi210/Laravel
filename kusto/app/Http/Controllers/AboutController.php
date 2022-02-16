@@ -3,30 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
-use App\Models\Projects;
-use App\Models\Found;
-use App\Models\Icon;
 use App\Models\AboutFound;
 use App\Models\AboutFoundContent;
-use App\Models\Report;
+use App\Models\Member;
+use App\Models\Employee;
+use App\Models\SocialLinkIcon;
+
+use Illuminate\Support\Facades\DB;
 
 
 
 
-class CompactController extends Controller
+class AboutController extends Controller
 {
     //
     public function index()
     {
-        $news = News::all();
-        $projects = Projects::all();
-        $founds = Found::all();
-        $icons = Icon::all();
-        $about_found = AboutFound::first();
+        $about_found = AboutFound::orderBy('created_at', 'asc')->where('id', 2)->first();
         $found_content = AboutFoundContent::all();
-        $reports = Report::all();
-        return view('main', compact('news', 'projects', 'founds', 'icons', 'about_found', 'found_content', 'reports'));
+        $member = Member::all();
+        $employees = Employee::all();
+        $linkIcons = SocialLinkIcon::all();
+        return view('about', compact('about_found', 'found_content', 'member', 'employees', 'linkIcons'));
     }
 
     // public function projects(){

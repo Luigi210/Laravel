@@ -13,7 +13,7 @@ class ProjectsPageController extends Controller
     public function index()
     {
         // $project = DB::select('select * from projectspage where id = 1');
-        $project = ProjectsPage::all()->count();
+        $project = ProjectsPage::all();
         // dd($project);
         return view('projects', [
             'project' => $project
