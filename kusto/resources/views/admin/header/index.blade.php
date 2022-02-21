@@ -1,6 +1,6 @@
 @extends('lay.admin_layout')
 
-@section('title', 'Все статьи')
+@section('title', 'Все хедеры')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Все статьи</h1>
+                    <h1 class="m-0">Все хедеры</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -33,16 +33,10 @@
                                     ID
                                 </th>
                                 <th>
-                                    Название
+                                    Картинка
                                 </th>
                                 <th>
-                                    Должность
-                                </th>
-                                <th>
-                                    Изображение
-                                </th>
-                                <th>
-                                    Member ID
+                                    Ссылка картинки
                                 </th>
                                 <th>
                                     Дата добавления
@@ -52,34 +46,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($employees as $employee)
+                            @foreach ($headers as $header)
                                 <tr>
                                     <td>
-                                        {{ $employee['id'] }}
+                                        {{ $header['id'] }}
+                                    </td>
+                                    
+                                    <td>
+                                        {{$header['image']}}
                                     </td>
                                     <td>
-                                        {{ $employee['name'] }}
+                                        {{ $header['imageLink'] }}
                                     </td>
                                     <td>
-                                        {{ $employee['position'] }}
-                                    </td>
-                                    <td>
-                                        {{ $employee['image'] }}
-                                    </td>
-                                    <td>
-                                        {{ $employee['member_id'] }}
-                                    </td>
-                                    <td>
-                                        {{ $employee['created_at'] }}
+                                        {{ $header['created_at'] }}
                                     </td>
 
                                     <td class="project-actions text-right">
-                                        <a class="btn btn-info btn-sm" href="{{ route('employee.edit', $employee['id']) }}">
+                                        <a class="btn btn-info btn-sm" href="{{ route('header.edit', $header['id']) }}">
                                             <i class="fas fa-pencil-alt">
                                             </i>
                                             Редактировать
                                         </a>
-                                        <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST"
+                                        <form action="{{ route('header.destroy', $header['id']) }}" method="POST"
                                             style="display: inline-block">
                                             @csrf
                                             @method('DELETE')
@@ -92,6 +81,8 @@
                                     </td>
                                 </tr>
                             @endforeach
+
+
                         </tbody>
                     </table>
                 </div>

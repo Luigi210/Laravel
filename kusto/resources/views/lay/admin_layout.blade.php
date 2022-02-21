@@ -251,22 +251,25 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-newspaper"></i>
                                 <p>
-                                    Футер
+                                    Хедер
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
 
                                 <li class="nav-item">
-                                    <a href="{{ route('report.index') }}" class="nav-link">
-                                        <p>Написать нам</p>
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Хедер
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('header.index') }}" class="nav-link">
                                                 <p> Все </p>
                                             </a>
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('header.create') }}" class="nav-link">
                                                 <p>Добавить</p>
                                             </a>
                                         </li>
@@ -274,45 +277,108 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('report.index') }}" class="nav-link">
-                                        <p>О нас</p>
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Хедер ссылки
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('headerLinks.index') }}" class="nav-link">
                                                 <p> Все </p>
                                             </a>
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('headerLinks.create') }}" class="nav-link">
                                                 <p>Добавить</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('report.create')}}" class="nav-link">
-                                        <p>Партнерам</p>
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Хедер ссылка
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('headerLink.index') }}" class="nav-link">
                                                 <p> Все </p>
                                             </a>
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('headerLink.create') }}" class="nav-link">
                                                 <p>Добавить</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('report.create')}}" class="nav-link">
-                                        <p>Контакты</p>
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Ссылки языков
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('languageLinks.index') }}" class="nav-link">
                                                 <p> Все </p>
                                             </a>
-                                            <a href="{{ route('report.index') }}" class="nav-link">
+                                            <a href="{{ route('languageLinks.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Ссылка языка
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('languageLink.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('languageLink.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Контактные ссылки
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('contactLinks.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('contactLinks.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Ссылки контактов
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('contactLink.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('contactLink.create') }}" class="nav-link">
                                                 <p>Добавить</p>
                                             </a>
                                         </li>

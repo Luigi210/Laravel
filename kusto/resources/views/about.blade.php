@@ -118,7 +118,7 @@
                                         @foreach($employees as $employee)
                                             @if($employee['member_id'] == $mem['id'])
                                                 <div class="team__item">
-                                                    <img class="team__img" src="images/img/team-img.jpg" alt="">
+                                                    <img class="team__img" src="{{$employee['image']}}" alt="">
                                                     <p class="team__patronymic">
                                                         {{$employee['name']}}
                                                     </p>

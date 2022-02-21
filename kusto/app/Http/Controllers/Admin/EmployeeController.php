@@ -57,6 +57,7 @@ class EmployeeController extends Controller
         $employee->name = $request->name;
         $employee->position = $request->position;
         $employee->member_id = $request->member_id;
+        $employee->image = $request->image;
 
         $employee->save();
 
@@ -105,7 +106,8 @@ class EmployeeController extends Controller
         $employee->name = $request->name;
         $employee->position = $request->position;
         $employee->member_id = $request->member_id;
-
+        $employee->image = $request->image;
+        
         $employee->save();
 
         return redirect()->back()->withSuccess('Работник добавлен');

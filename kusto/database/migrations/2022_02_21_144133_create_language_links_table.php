@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeesTable extends Migration
+class CreateLanguageLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('language_links', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('position');
-            $table->string('image');
-            $table->unsignedBigInteger('member_id');
-            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
+            $table->unsignedBigInteger('table_header_id');
+            $table->foreign('table_header_id')->references('id')->on('table_header')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('language_links');
     }
 }

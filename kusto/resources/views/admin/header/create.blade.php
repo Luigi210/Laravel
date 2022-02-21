@@ -1,6 +1,6 @@
 @extends('lay.admin_layout')
 
-@section('title', 'Добавить Новости')
+@section('title', 'Редактирование Хедера')
 
 @section('content')
 
@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавить Работника</h1>
+                    <h1 class="m-0">Добавление хедера:</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -27,39 +27,24 @@
                 <div class="col-lg-12">
                     <div class="card card-primary">
                         <!-- form start -->
-                        <form action="{{route('employee.store')}}" method="POST">
+                        <form action="{{route('header.store')}}" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="">ФИО</label>
-                                    <input type="text" name="name" class="form-control" id=""
-                                        placeholder="Введите команду" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">Должность</label>
-                                    <input type="text" name="position" class="form-control" id=""
-                                        placeholder="Введите тип" required>
+                                    <label for="exampleInputEmail1">Ссылка</label>
+                                    <input type="text" name="imageLink" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Ссылка" value="" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="feature_image">Изображение</label>
                                     <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
                                     <input type="text" name="image" class="form-control" id="feature_image"
-                                        value="" readonly>
-                                    <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
+                                        name="feature_image" value="" readonly>
+                                    
+                                    <a href="" class="popup_selector" data-inputid="feature_image">Изменить изображение</a>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="feature_image">Member Id</label>
-                                    {{-- <input type="text" name="found_id" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Введите Found ID" required> --}}
-                                    <select name="member_id" class="form-control" required>
-                                        @foreach($members as $member)
-                                            <option value="{{$member['id']}}">{{$member['id']}}. {{$member['title']}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                
                             </div>
                             <!-- /.card-body -->
 

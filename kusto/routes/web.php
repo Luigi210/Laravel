@@ -42,8 +42,14 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     Route::resource('member', \Admin\MemberController::class);
     Route::resource('employee', \Admin\EmployeeController::class);
     Route::resource('abouticon', \Admin\SocialIconController::class);
-
-
+    Route::resource('header', \Admin\HeaderController::class);
+    Route::resource('headerLinks', \Admin\HeaderLinksController::class);
+    Route::resource('headerLink', \Admin\HeaderLinkController::class);
+    Route::resource('languageLinks', \Admin\LanguageLinksController::class);
+    Route::resource('languageLink', \Admin\LanguageLinkController::class);
+    Route::resource('contactLinks', \Admin\ContactLinksController::class);
+    Route::resource('contactLink', \Admin\ContactLinkController::class);
+    
 });
 
 Route::post('/', [App\Http\Controllers\CustomUserController::class, 'submit']);

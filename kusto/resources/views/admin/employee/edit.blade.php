@@ -43,6 +43,14 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="feature_image">Изображение</label>
+                                    <img src="{{$employees['image']}}" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                    <input type="text" name="image" class="form-control" id="feature_image"
+                                        value="{{$employees['image']}}" readonly>
+                                    <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="feature_image">Member Id</label>
                                     {{-- <input type="text" name="found_id" class="form-control" id="exampleInputEmail1"
                                         placeholder="Введите Found ID" required> --}}
