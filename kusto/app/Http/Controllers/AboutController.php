@@ -8,6 +8,12 @@ use App\Models\AboutFoundContent;
 use App\Models\Member;
 use App\Models\Employee;
 use App\Models\SocialLinkIcon;
+use App\Models\HeaderLinks;
+use App\Models\LanguageLinks;
+use App\Models\ContactLinks;
+use App\Models\Header;
+
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -24,22 +30,23 @@ class AboutController extends Controller
         $member = Member::all();
         $employees = Employee::all();
         $linkIcons = SocialLinkIcon::all();
-        return view('about', compact('about_found', 'found_content', 'member', 'employees', 'linkIcons'));
+        $header = Header::first();
+        $headerLinks = HeaderLinks::all();
+        $languageLinks = LanguageLinks::all();
+        $contactLinks = ContactLinks::all();
+        return view('about', 
+                    compact(
+                            'about_found', 
+                            'found_content', 
+                            'member', 
+                            'employees', 
+                            'linkIcons',
+                            'header',
+                            'headerLinks',
+                            'languageLinks',
+                            'contactLinks'
+                        )
+                    );
     }
 
-    // public function projects(){
-        
-    //     return view('ourprojects', [
-    //         'projects' => $projects
-    //     ]);
-    // }
-
-    // public function found(){
-
-    //     $founds = Found::all();
-    //     return view('found', [
-    //         'founds' => $founds
-    //     ]);
-
-    // }
 }

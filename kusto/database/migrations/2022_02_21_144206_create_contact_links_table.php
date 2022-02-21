@@ -15,8 +15,9 @@ class CreateContactLinksTable extends Migration
     {
         Schema::create('contact_links', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
             $table->string('image');
+            $table->string('link');
+            $table->string('description');
             $table->unsignedBigInteger('table_header_id');
             $table->foreign('table_header_id')->references('id')->on('table_header');
             $table->timestamps();

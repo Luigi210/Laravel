@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\HeaderLinks;
+use App\Models\Header;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class HeaderLinksController extends Controller
         //
         $hlinks = HeaderLinks::orderBy('created_at', 'desc')->get();
 
-        return view('admin.headerLinks', 
+        return view('admin.headerLinks.index', 
             [
                 'hlinks' => $hlinks
             ]
@@ -33,11 +34,11 @@ class HeaderLinksController extends Controller
     public function create()
     {
         //
-        $headers = Header::first();
+        $header = Header::first();
 
-        return view('admin.header.create', 
+        return view('admin.headerLinks.create', 
             [
-                'headers' => $headers
+                'header' => $header
             ]
         );
     }
@@ -53,8 +54,8 @@ class HeaderLinksController extends Controller
         //
         $header = new HeaderLinks();
         $header->table_header_id = $request->table_header_id;
-
-
+        $header->title = $request->title;
+        $header->link = $request->link;
         $header->save();
 
         return redirect()->back()->withSuccess('Ссылка хедера добавлена');
@@ -85,7 +86,7 @@ class HeaderLinksController extends Controller
         return view('admin.headerLinks.edit', 
             [
                 'header' => $header,
-                'hlinks' => $headerLinks
+                'hlink' => $headerLinks
             ]
         );
     }
@@ -101,6 +102,8 @@ class HeaderLinksController extends Controller
     {
         //
         $headerLinks->table_header_id = $request->table_header_id;
+        $headerLinks->title = $request->title;
+        $headerLinks->link = $request->link;
 
         $headerLinks->save();
 

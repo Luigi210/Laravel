@@ -110,7 +110,7 @@ class EmployeeController extends Controller
         
         $employee->save();
 
-        return redirect()->back()->withSuccess('Работник добавлен');
+        return redirect()->back()->withSuccess('Работник изменен');
     }
 
     /**

@@ -15,6 +15,8 @@ class CreateLanguageLinksTable extends Migration
     {
         Schema::create('language_links', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 4);
+            $table->string('link');
             $table->unsignedBigInteger('table_header_id');
             $table->foreign('table_header_id')->references('id')->on('table_header')->onDelete('cascade');
             $table->timestamps();

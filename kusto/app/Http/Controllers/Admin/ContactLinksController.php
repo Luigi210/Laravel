@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-
+use App\Models\Header;
 use App\Models\ContactLinks;
 use App\Http\Controllers\Controller;
 
@@ -18,6 +18,14 @@ class ContactLinksController extends Controller
     public function index()
     {
         //
+        $contacts = ContactLinks::orderBy('created_at', 'desc')-> get();
+
+
+        return view('admin.contactLinks.index', 
+            [
+                'contacts' => $contacts
+            ]
+        );
     }
 
     /**
@@ -28,6 +36,14 @@ class ContactLinksController extends Controller
     public function create()
     {
         //
+        $header = Header::first();
+
+
+        return view('admin.contactLinks.create',
+            [
+                'header' => $header
+            ]
+        );
     }
 
     /**
@@ -39,6 +55,19 @@ class ContactLinksController extends Controller
     public function store(Request $request)
     {
         //
+
+        $contact = new ContactLinks();
+
+        $contact->image = $request->image;
+        $contact->link = $request->link;
+        $contact->description = $request->description;
+        $contact->table_header_id = $request->table_header_id;
+
+        $contact->save();
+
+
+        return redirect()->back()->withSuccess('Ссылка Контакта добавлена');
+
     }
 
     /**
@@ -61,6 +90,15 @@ class ContactLinksController extends Controller
     public function edit(ContactLinks $contactLinks)
     {
         //
+
+        $header = Header::first();
+
+        return view('admin.contactLinks.edit', 
+            [
+                'header' => $header,
+                'clink' => $contactLinks
+            ]
+        );
     }
 
     /**
@@ -73,6 +111,15 @@ class ContactLinksController extends Controller
     public function update(Request $request, ContactLinks $contactLinks)
     {
         //
+        $contact->image = $request->image;
+        $contact->link = $contact->link;
+        $contact->description = $contact->description;
+        $contact->table_header_id = $request->table_header_id;
+
+        $contact->save();
+
+
+        return redirect()->back()->withSuccess('Контакт ссылка изменена');
     }
 
     /**
@@ -84,5 +131,9 @@ class ContactLinksController extends Controller
     public function destroy(ContactLinks $contactLinks)
     {
         //
+        $contactLinks->delete();
+
+
+        return redirect()->back()->withSuccess('Ссылка контакта удалена');
     }
 }

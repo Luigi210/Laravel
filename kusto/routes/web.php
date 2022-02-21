@@ -19,12 +19,6 @@ Route::get('/projects', [App\Http\Controllers\ProjectsPageController::class, 'in
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 
 
-
-
-// Route::get('/projects', function(){
-//     return view('projects');
-// });
-
 Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.index');
@@ -33,7 +27,6 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     Route::resource('custom_users', \Admin\CustomUserController::class);
     Route::resource('projectspage', \Admin\ProjectsPageController::class);
     Route::resource('newspage', \Admin\NewsPageController::class);
-    // Route::put('newspage/{newspage}/edit', 'NewsPageController@update');
     Route::resource('found', \Admin\FoundController::class);
     Route::resource('icon', \Admin\IconController::class);
     Route::resource('about_found', \Admin\AboutFoundController::class);
@@ -44,11 +37,8 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     Route::resource('abouticon', \Admin\SocialIconController::class);
     Route::resource('header', \Admin\HeaderController::class);
     Route::resource('headerLinks', \Admin\HeaderLinksController::class);
-    Route::resource('headerLink', \Admin\HeaderLinkController::class);
     Route::resource('languageLinks', \Admin\LanguageLinksController::class);
-    Route::resource('languageLink', \Admin\LanguageLinkController::class);
     Route::resource('contactLinks', \Admin\ContactLinksController::class);
-    Route::resource('contactLink', \Admin\ContactLinkController::class);
     
 });
 

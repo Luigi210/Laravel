@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\LanguageLinks;
+use App\Models\Header;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,6 +18,11 @@ class LanguageLinksController extends Controller
     public function index()
     {
         //
+        $languageLinks = LanguageLinks::all();
+
+        return view('admin.languageLinks.index', [
+            'links' => $languageLinks
+        ]);
     }
 
     /**
@@ -26,6 +33,13 @@ class LanguageLinksController extends Controller
     public function create()
     {
         //
+        $header = Header::first();
+
+        return view('admin.languageLinks.create', 
+            [
+                'header' => $header
+            ]
+        );
     }
 
     /**
@@ -37,6 +51,15 @@ class LanguageLinksController extends Controller
     public function store(Request $request)
     {
         //
+        $links = new LanguageLinks();
+
+        $links->name = $request->name;
+        $links->link = $request->link;
+        $links->table_header_id = $request->table_header_id;
+
+        $links->save();
+
+        return redirect()->back()->withSuccess('Ссылка добавлена');
     }
 
     /**
@@ -59,6 +82,14 @@ class LanguageLinksController extends Controller
     public function edit(LanguageLinks $languageLinks)
     {
         //
+        $header = Header::first();
+
+        return view('admin.languageLinks.create', 
+            [
+                'header' => $header,
+                'links' => $languageLinks
+            ]
+        );
     }
 
     /**
@@ -71,6 +102,13 @@ class LanguageLinksController extends Controller
     public function update(Request $request, LanguageLinks $languageLinks)
     {
         //
+        $links->name = $request->name;
+        $links->link = $request->link;
+        $links->table_header_id = $request->table_header_id;
+        
+        $employee->save();
+
+        return redirect()->back()->withSuccess('Ссылка изменена');
     }
 
     /**
@@ -82,5 +120,9 @@ class LanguageLinksController extends Controller
     public function destroy(LanguageLinks $languageLinks)
     {
         //
+        $languageLinks->delete();
+
+        return redirect()->back()->withSuccess('Ссылка удалена');
+
     }
 }

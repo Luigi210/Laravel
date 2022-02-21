@@ -10,6 +10,12 @@ use App\Models\Icon;
 use App\Models\AboutFound;
 use App\Models\AboutFoundContent;
 use App\Models\Report;
+use App\Models\Header;
+use App\Models\HeaderLinks;
+use App\Models\LanguageLinks;
+use App\Models\ContactLinks;
+
+
 
 
 
@@ -26,22 +32,25 @@ class CompactController extends Controller
         $about_found = AboutFound::first();
         $found_content = AboutFoundContent::all();
         $reports = Report::all();
-        return view('main', compact('news', 'projects', 'founds', 'icons', 'about_found', 'found_content', 'reports'));
+        $header = Header::first();
+        $headerLinks = HeaderLinks::all();
+        $languageLinks = LanguageLinks::all();
+        $contactLinks = ContactLinks::all();
+        return view('main', 
+                    compact(
+                            'news', 
+                            'projects', 
+                            'founds', 
+                            'icons', 
+                            'about_found', 
+                            'found_content', 
+                            'reports',
+                            'header',
+                            'headerLinks',
+                            'languageLinks',
+                            'contactLinks'
+                        )
+                    );
     }
 
-    // public function projects(){
-        
-    //     return view('ourprojects', [
-    //         'projects' => $projects
-    //     ]);
-    // }
-
-    // public function found(){
-
-    //     $founds = Found::all();
-    //     return view('found', [
-    //         'founds' => $founds
-    //     ]);
-
-    // }
 }

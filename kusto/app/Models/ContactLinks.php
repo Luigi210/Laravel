@@ -9,11 +9,6 @@ class ContactLinks extends Model
 {
     use HasFactory;
 
-    public function contactLink(){
-
-        return $this->hasMany(ContactLink::class);
-    }
-
     public function header(){
 
         return $this->belongsTo(Header::class);

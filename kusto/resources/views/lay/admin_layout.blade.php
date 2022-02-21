@@ -294,24 +294,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <p>
-                                            Хедер ссылка
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('headerLink.index') }}" class="nav-link">
-                                                <p> Все </p>
-                                            </a>
-                                            <a href="{{ route('headerLink.create') }}" class="nav-link">
-                                                <p>Добавить</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <p>
@@ -330,24 +313,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <p>
-                                            Ссылка языка
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('languageLink.index') }}" class="nav-link">
-                                                <p> Все </p>
-                                            </a>
-                                            <a href="{{ route('languageLink.create') }}" class="nav-link">
-                                                <p>Добавить</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <p>
@@ -366,24 +332,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <p>
-                                            Ссылки контактов
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('contactLink.index') }}" class="nav-link">
-                                                <p> Все </p>
-                                            </a>
-                                            <a href="{{ route('contactLink.create') }}" class="nav-link">
-                                                <p>Добавить</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li class="nav-item">

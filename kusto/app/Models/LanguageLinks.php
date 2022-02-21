@@ -9,10 +9,7 @@ class LanguageLinks extends Model
 {
     use HasFactory;
 
-    public function languageLink(){
-        return $this->hasMany(LanguageLink::class);
-    }
-
+    
     public function header(){
         return $this->belongsTo(Header::class);
     }

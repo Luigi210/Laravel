@@ -25,8 +25,8 @@
         <header class="header">
             <div class="container">
                 <div class="header__inner">
-                    <a class="header__logo" href="{{url('/')}}">
-                        <img src="{{asset('/images/logo-header.svg')}}" alt="">
+                    <a class="header__logo" href="{{$header['imageLink']}}">
+                        <img src="{{$header['image']}}" alt="">
                     </a>
                     <button class="burger">
                         <span class="burger-line"></span>
@@ -34,49 +34,35 @@
                     <div class="header__item-box"></div>
                     <div class="header__item">
                         <div class="header__language">
-                            <a class="header__language-ru" href="#?">
-                                ru
-                            </a>
-                            <a class="header__language-kz" href="#?">
-                                kz
-                            </a>
-                            <a class="header__language-en" href="#?">
-                                en
-                            </a>
+
+                            @foreach($languageLinks as $link)
+                                <a class="header__language-{{strtolower($link['name'])}}" href="{{$link['link']}}">
+                                    {{$link['name']}}
+                                </a>
+                            @endforeach
                         </div>
                         <nav class="header__nav">
                             <ul class="header__list">
-                                <li class="header__list-item">
-                                    <a class="header__list-link" href="{{url('/about')}}">
-                                        О фонде
-                                    </a>
-                                </li>
-                                <li class="header__list-item">
-                                    <a class="header__list-link" href="{{url('/projects')}}">
-                                        Наши проекты
-                                    </a>
-                                </li>
-                                <li class="header__list-item">
-                                    <a class="header__list-link" href="#!">
-                                        Отчёты
-                                    </a>
-                                </li>
-                                <li class="header__list-item">
-                                    <a class="header__list-link" href="#!">
-                                        Контакты
-                                    </a>
-                                </li>
+                                @foreach ($headerLinks as $header)
+                                
+                                    <li class="header__list-item">
+                                        <a class="header__list-link" href="{{$header['link']}}">
+                                            {{$header['title']}}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </nav>
                         <div class="header__contacts">
                             <p class="header__contacts-phone">
-                                8 800 808-00-80
+                                {{$contactLinks[0]['description']}}
                             </p>
-                            <a class="header__contacts-email" href="#?">
-                                Kustohelp@gmail.com
+                            <a class="header__contacts-email" href="{{$contactLinks[1]['link']}}">
+                                {{$contactLinks[1]['description']}}
+
                             </a>
-                            <a class="header__contacts-whatsaap" href="#?">
-                                Написать нам
+                            <a class="header__contacts-whatsaap" href="{{$contactLinks[2]['link']}}">
+                                {{$contactLinks[2]['description']}}
                             </a>
                         </div>
                     </div>
