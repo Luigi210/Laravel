@@ -377,6 +377,147 @@
                                 
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Футер
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Футер
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Партнеры
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_about_partners.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_about_partners.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Детали о партнерах
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_about_partners_details.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_about_partners_details.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Контакты
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_contact.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_contact.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Детали контакты
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_contact_details.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_contact_details.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>
+                                            Связь с нами
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_contact_us.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_contact_us.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <p>
+                                            Ссылки Иконки
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('footer_social_icon.index') }}" class="nav-link">
+                                                <p> Все </p>
+                                            </a>
+                                            <a href="{{ route('footer_social_icon.create') }}" class="nav-link">
+                                                <p>Добавить</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

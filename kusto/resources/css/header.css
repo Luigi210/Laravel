@@ -225,7 +225,7 @@
 }
 
 .header__contacts-whatsaap::before {
-    background-image: url(../images/icons/whatsapp.svg);
+    background-image: var(--backgroundIcon-var);
     width: 20px;
     height: 20px;
 }

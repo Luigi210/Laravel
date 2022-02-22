@@ -39,6 +39,14 @@ Route::middleware(['role:admin'])->prefix('adminn')->group(function(){
     Route::resource('headerLinks', \Admin\HeaderLinksController::class);
     Route::resource('languageLinks', \Admin\LanguageLinksController::class);
     Route::resource('contactLinks', \Admin\ContactLinksController::class);
+    Route::resource('footer', \Admin\FooterController::class);
+    Route::resource('footer_about_partners', \Admin\FooterAboutPartnersController::class);
+    Route::resource('footer_about_partners_details', \Admin\FooterAboutPartnersDetailsController::class);
+    Route::resource('footer_contact', \Admin\FooterContactController::class);
+    Route::resource('footer_contact_details', \Admin\FooterContactDetailsController::class);
+    Route::resource('footer_contact_us', \Admin\FooterContactUsController::class);
+    Route::resource('footer_social_icon', \Admin\FooterSocialIconController::class);
+
     
 });
 

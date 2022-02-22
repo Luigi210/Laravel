@@ -154,112 +154,87 @@
             <div class="container">
                 <div class="footer__inner">
                     <div class="footer__social">
-                        <a class="footer__logo" href="#?">
-                            <img class="footer__logo-img" src="images/footer-logo.png" alt="">
+                        <a class="footer__logo" href="{{$footer['link']}}">
+                            <img class="footer__logo-img" src="{{$footer['image']}}" alt="">
                         </a>
                         <div class="footer__social-icons">
-                            <a class="footer__social-link footer__social-youtube" href="#?">
-                                <svg class="icon" width="22" height="15.9">
-                                    <use xlink:href="images/icons/sprite.svg#youtube"></use>
-                                </svg>
-                            </a>
-                            <a class="footer__social-link footer__social-instagram" href="#?">
-                                <svg class="icon" width="19" height="19">
-                                    <use xlink:href="images/icons/sprite.svg#instagram"></use>
-                                </svg>
-                            </a>
-                            <a class="footer__social-link footer__social-facebook" href="#?">
-                                <svg class="icon" width="11" height="21">
-                                    <use xlink:href="images/icons/sprite.svg#facebook"></use>
-                                </svg>
-                            </a>
+                            @foreach ($footerSocial as $icons)
+                                
+                                <a class="footer__social-link footer__social-youtube" href="{{$icons['link']}}">
+                                    <svg class="icon" width="22" height="15.9">
+                                        <use xlink:href="{{$icons['image']}}"></use>
+                                    </svg>
+                                </a>
+                            @endforeach
                         </div>
                         <div class="footer__social-contact">
-                            <a class="footer__social-whatsaap" href="#?">
-                                Написать нам
-                            </a>
-                            <a class="footer__social-email" href="#?">
-                                Kustohelp@gmail.com
-                            </a>
+                            @foreach ($footerContactUs as $contact)
+                                <a class="footer__social-whatsaap" style="--backgroundIcon-var:{{$contact['image']}};" href="{{$contact['link']}}">
+                                    {{$contact['title']}}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="footer__about">
-                        <h5 class="footer__title">
-                            О нас
-                        </h5>
-                        <ul class="footer__list">
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    О Фонде
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Команда фонда
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Попечительский совет
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Проекты
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Новости Фонда
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__partners">
-                        <h5 class="footer__title">
-                            Партнерам
-                        </h5>
-                        <ul class="footer__list">
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Свои новости
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Пресса о нас
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Отчеты
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Годовые отчеты
-                                </a>
-                            </li>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="#?">
-                                    Контакты
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+                    @foreach($footerAboutPartners as $footerAboutPartner)
+
+                        @if ($footerAboutPartner['id'] == 1)
+                            <div class="footer__about">
+                                <h5 class="footer__title">
+                                    {{$footerAboutPartner['title']}}
+                                </h5>
+                                <ul class="footer__list">
+                                    @foreach($footerAboutPartnersDetails as $footerAboutPartnerDetail)
+                                        @if($footerAboutPartnerDetail['about_partners_id'] == $footerAboutPartner['id'])
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="{{$footerAboutPartnerDetail['link']}}">
+                                                    {{$footerAboutPartnerDetail['title']}}
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @elseif($footerAboutPartner['id'] == 2)
+                            <div class="footer__partners">
+                                <h5 class="footer__title">
+                                    {{$footerAboutPartner['title']}}
+                                </h5>
+                                <ul class="footer__list">
+                                    @foreach($footerAboutPartnersDetails as $footerAboutPartnerDetail)
+                                        @if($footerAboutPartnerDetail['about_partners_id'] == $footerAboutPartner['id'])
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="#?">
+                                                    {{$footerAboutPartnerDetail['title']}}
+                                                    
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    @endforeach
+                    
                     <div class="footer__contacts">
                         <h5 class="footer__title" id="contacts">
-                            Контакты
+                            {{$footerContact['title']}}
                         </h5>
-                        <div class="footer__contacts-item footer__contacts-address">
-                            <h6 class="footer__contacts-title">
-                                Адрес
-                            </h6>
-                            <p class="footer__contacts-text">
-                                Алматы, ул. Набережная 1
-                            </p>
-                        </div>
-                        <div class="footer__contacts-item footer__contacts-phone">
+                        @foreach($footerContactDetails as $footerContactDetail)
+
+                            @if($footerContactDetail['contact_id'] == $footerContact['id'])
+                            <div class="footer__contacts-item footer__contacts-address">
+                                <h6 class="footer__contacts-title">
+                                    {{$footerContactDetail['title']}}
+                                </h6>
+                                <p class="footer__contacts-text">
+                                    {{$footerContactDetail['details']}}
+
+                                </p>
+                            </div>
+                            @endif
+                        @endforeach
+                        {{-- <div class="footer__contacts-item footer__contacts-phone">
                             <h6 class="footer__contacts-title">
                                 Телефон
                             </h6>
@@ -275,7 +250,7 @@
                             <p class="footer__contacts-text">
                                 Пн - Пт / 8:30 - 19:00
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
